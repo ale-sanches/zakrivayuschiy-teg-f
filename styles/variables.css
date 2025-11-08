@@ -30,4 +30,14 @@
     );
     --container-width: clamp(375px, 100vw, 700px);
     --main-color: #000;
+    --bg-color: #fff;
+    --border: 2px solid var(--main-color);
+    --header-padding-block: clamp(
+            122px,
+            calc(122px + (8 * (100vw - 375px) / 1065)),
+            130px
+    );
+    --page-block-padding: 100px;
+    --btn-font-size: 14px;
+
 }
