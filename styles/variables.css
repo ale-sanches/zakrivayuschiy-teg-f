@@ -39,5 +39,6 @@
     );
     --page-block-padding: 100px;
     --btn-font-size: 14px;
+    --dialog-width: clamp(341px, calc(341px + 1.07vw), 353px);
 
 }

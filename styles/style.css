@@ -136,14 +136,99 @@
     max-height: 24px;
 }
 
-.card__like-button {
+.button {
     font-family: var(--font-accent), serif;
     font-size: var(--btn-font-size);
     padding: 9px 17px;
     background-color: var(--bg-color);
     border: var(--border);
-    width: 130px;
-    min-height: 38px;
     line-height: 90%;
 }
-.
+
+.card__like-button {
+    width: 130px;
+    min-height: 38px;
+}
+
+.save-btn {
+    width: 335px;
+    height: 55px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.save-icon {
+    width: 21px;
+}
+
+.dialog {
+    width: var(--dialog-width);
+    padding: 30px;
+    border: var(--border);
+}
+
+.dialog::backdrop {
+    background: #000;
+    opacity: 0.75;
+}
+
+.dialog__block {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dialog-icon {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+}
+
+.dialog__text {
+    font-family: var(--font-accent), serif;
+}
+
+.dialog__button {
+    width: 100%;
+    text-transform: uppercase;
+}
+/*filters*/
+.blur{
+    filter: blur(5px);
+}
+.hue-rotate{
+    animation: filter-image 3s linear infinite;
+    filter: hue-rotate(0deg);
+}
+@keyframes filter-image {
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+.contrast{
+    filter: contrast(50%);
+}
+.saturation{
+    filter: saturate(50%);
+}
+.sepia{
+    filter: sepia(30%);
+}
+.invert{
+    filter: invert(10%);
+}
+.brightness{
+    filter: brightness(90%);
+}
+.opacity{
+    filter: opacity(50%);
+}
+.filter{
+    filter: brightness(1.3)
+    contrast(1.5)
+    saturate(200%)
+    hue-rotate(200deg)
+}
