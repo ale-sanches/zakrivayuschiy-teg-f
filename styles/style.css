@@ -174,12 +174,6 @@
     padding: 9px 17px;
 }
 
-.card__like-button {
-    width: 130px;
-    min-height: 38px;
-    padding: 9px 17px;
-}
-
 .button {
     font-family: var(--font-accent), serif;
     font-size: var(--btn-font-size);
