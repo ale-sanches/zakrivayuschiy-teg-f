@@ -128,12 +128,56 @@
     display: flex;
     align-items: flex-start;
     justify-content: end;
+    gap: 7px;
 }
 
 .card__icon-button {
+    position: relative;
+    display: flex;
+    align-items: end;
+    min-height: 38px;
     border: none;
+    padding: 0;
     background-color: transparent;
-    max-height: 24px;
+    cursor: pointer;
+    z-index: 1;
+    outline: none;
+}
+
+.card__icon-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: 2px solid var(--main-color);
+    outline-offset: -2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.card__icon-button:focus-visible::before {
+    opacity: 1;
+    z-index: 0;
+}
+
+.card__icon-button:focus:not(:focus-visible)::before {
+    opacity: 0;
+    z-index: -1;
+}
+
+.card__like-button {
+    width: 130px;
+    min-height: 38px;
+    padding: 9px 17px;
+}
+
+.card__like-button {
+    width: 130px;
+    min-height: 38px;
+    padding: 9px 17px;
 }
 
 .button {
@@ -146,7 +190,7 @@
     transition: box-shadow 0.3s ease;
     position: relative;
     cursor: pointer;
-    overflow: hidden; /* нужно для translate или scale псевдоэлемента */
+    overflow: hidden;
     color: var(--main-color);
 }
 
@@ -155,7 +199,7 @@
     color: white;
     position: relative;
     z-index: 1;
-    mix-blend-mode: difference; /* иконка и текст меняют цвет при overlay */
+    mix-blend-mode: difference;
 }
 
 .button:after {
@@ -174,15 +218,17 @@
     box-shadow: 2px 2px 0 var(--main-color);
 }
 
+.button:focus-visible {
+    outline: none;
+    box-shadow: 2px 2px 0 var(--main-color);
+}
+
 .button:hover:after {
     transform: scaleX(1);
 }
 
 
-.card__like-button {
-    width: 130px;
-    min-height: 38px;
-}
+
 
 .save-btn {
     width: 335px;
@@ -266,4 +312,22 @@
 
 .filter {
     filter: brightness(1.3) contrast(1.5) saturate(200%) hue-rotate(200deg)
+}
+
+@media (width <= 450px) {
+
+    .save-btn {
+        flex-direction: column;
+        width: 306px;
+        height: 84px;
+    }
+
+    .save-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .dialog {
+        padding-inline: 40px;
+    }
 }
