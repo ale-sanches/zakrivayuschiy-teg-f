@@ -322,7 +322,17 @@
         height: 28px;
     }
 
-    .dialog {
+    .dialog[open] {
         padding-inline: 40px;
+        width: 341px;
+        margin: auto 17px;
+    }
+
+    .dialog[open] .dialog__block {
+        width: 261px;
+    }
+
+    .dialog[open] .dialog__button {
+        width: 261px;
     }
 }
